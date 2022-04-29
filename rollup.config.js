@@ -44,7 +44,12 @@ const conf = entry => ({
     },
   })),
   external: [
-    ...(entry.external ? Object.keys(packageConf.dependencies || {}) : []),
+    ...(entry.external
+      ? Object.keys({
+          ...packageConf.dependencies,
+          ...packageConf.peerDependencies,
+        })
+      : []),
     'react',
     'react-dom',
   ],
