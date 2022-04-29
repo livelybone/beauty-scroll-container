@@ -1,0 +1,90 @@
+.beauty-scroll-container {
+  position: relative;
+}
+
+.beauty-scroll-horizontal-scrollable {
+  .beauty-scroll-indicator-left,
+  .beauty-scroll-indicator-right {
+    display: block;
+  }
+}
+
+.beauty-scroll-vertical-scrollable {
+  .beauty-scroll-indicator-top,
+  .beauty-scroll-indicator-bottom {
+    display: block;
+  }
+}
+
+.beauty-scroll-reach-left {
+  .beauty-scroll-indicator-left {
+    opacity: 0;
+  }
+}
+
+.beauty-scroll-reach-right {
+  .beauty-scroll-indicator-right {
+    opacity: 0;
+  }
+}
+
+.beauty-scroll-reach-top {
+  .beauty-scroll-indicator-top {
+    opacity: 0;
+  }
+}
+
+.beauty-scroll-reach-bottom {
+  .beauty-scroll-indicator-bottom {
+    opacity: 0;
+  }
+}
+
+.beauty-scroll-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.beauty-scroll-indicator {
+  display: none;
+  position: absolute;
+  transition: opacity 0.2s cubic-bezier(0.2, 0, 0.4, 1);
+  pointer-events: none;
+}
+
+.beauty-scroll-indicator-left {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to left, transparent, currentColor);
+}
+
+.beauty-scroll-indicator-right {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to right, transparent, currentColor);
+}
+
+.beauty-scroll-indicator-top {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6px;
+  background: linear-gradient(to top, transparent, currentColor);
+}
+
+.beauty-scroll-indicator-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: linear-gradient(to bottom, transparent, currentColor);
+}

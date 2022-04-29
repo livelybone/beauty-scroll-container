@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeautyScrollContainer</title>
+
+  <!-- Inject some helpers for code running. It is not needed in a real project when you configured babel-polyfill or there is no new feature of js which is used in the project -->
+  <!-- 为代码运行注入一些babel帮助函数。在真正的babel项目中，当已配置 babel-polyfill 时，或者js没有新特性时，并不需要它 -->
+  <script src="https://cdn.jsdelivr.net/npm/@babel/polyfill/dist/polyfill.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <!-- china region: If your example running slow at begin, please try to use the follow CDN -->
+  <!-- <script src="https://cdn.bootcss.com/react/16.9.0/umd/react.development.js" crossorigin></script> -->
+  <!-- <script src="https://cdn.bootcss.com/react-dom/16.9.0/umd/react-dom.development.js" crossorigin></script> -->
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js" crossorigin></script>
+  <script src="../lib/umd/index.js"></script>
+  <link rel="stylesheet" href="../lib/css/index.css">
+</head>
+<body>
+<div id="module"></div>
+
+<script type="text/babel">
+const module = document.getElementById('module')
+
+// Get the target component
+// maybe it is a property of BeautyScrollContainer, You should get it like this way: `BeautyScrollContainer[theComponentName]`
+const Comp = BeautyScrollContainer
+
+const App = () => {
+  const [state, setState] = React.useState({})
+
+  return (
+    <div>
+      <Comp style={{ width: 500, height: 500 }}>
+        <div style={{ width: '100vw', height: '100vh', background: 'repeating-linear-gradient(red 0%, red 1%, #fff0 1%, #fff0 10%), repeating-linear-gradient(to right, red 0%, red 1%, #fff0 1%, #fff0 10%)' }} />
+      </Comp>
+    </div>
+  )
+}
+
+ReactDOM.render(<App />, module)
+</script>
+</body>
+</html>
