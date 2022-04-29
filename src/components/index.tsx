@@ -49,7 +49,7 @@ export default class BeautyScrollContainer extends PureComponent<
     el.addEventListener('scroll', this.updateState)
     if (typeof MutationObserver !== 'undefined') {
       const observer = new MutationObserver(this.updateState)
-      observer.observe(this.ref.current!, { attributes: true })
+      observer.observe(el, { attributes: true })
       this.removeListener = () => {
         observer.disconnect()
         el.removeEventListener('scroll', this.updateState)

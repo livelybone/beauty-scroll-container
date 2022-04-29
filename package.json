@@ -1,6 +1,6 @@
 {
   "name": "beauty-scroll-container",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react component that provider a beauty scroll container",
   "main": "./lib/umd/index.js",
   "module": "./lib/es/index.js",
@@ -85,6 +85,9 @@
     "rollup-plugin-node-resolve": "4.2.4",
     "rollup-plugin-uglify": "6.0.4",
     "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "classnames": ">=2.3.1"
   },
   "config": {
     "commitizen": {
