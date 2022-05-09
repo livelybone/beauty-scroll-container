@@ -50,7 +50,7 @@ export default class BeautyScrollContainer extends PureComponent<
     window.addEventListener('resize', this.updateState)
     if (typeof MutationObserver !== 'undefined') {
       const observer = new MutationObserver(this.updateState)
-      observer.observe(el, { attributes: true, subtree: true })
+      observer.observe(el, { attributes: true, childList: true, subtree: true })
       this.removeListener = () => {
         observer.disconnect()
         el.removeEventListener('scroll', this.updateState)

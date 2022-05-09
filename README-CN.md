@@ -38,8 +38,16 @@ npm i -S beauty-scroll-container
 去 [index.d.ts](./index.d.ts) 查看可用方法和参数
 
 ## Usage
-```js
-import * as BeautyScrollContainer from 'beauty-scroll-container'
+```jsx
+import BeautyScrollContainer from 'beauty-scroll-container'
+
+const Comp = () => {
+  return (
+    <BeautyScrollContainer style={{ width: '100vw', height: '100vh' }}>
+      <div style={{ width: '200vw', height: '200vh' }}></div>
+    </BeautyScrollContainer>
+  )
+}
 ```
 
 ## CDN
